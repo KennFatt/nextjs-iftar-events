@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function EventCard({ title, date, contact, thumbnail }) {
   return (
-    <div className="flex flex-col items-center overflow-hidden rounded-md shadow-lg">
+    <div className="container flex flex-col items-center mx-auto overflow-hidden rounded-md shadow-lg">
       {/* Image */}
       <div className="w-full h-32 bg-gradient-to-br from-green-800 to-green-400">
         <img
@@ -17,7 +17,9 @@ export default function EventCard({ title, date, contact, thumbnail }) {
       <div className="w-full px-4 py-4 space-y-2">
         {/* Title */}
         <Link href="/">
-          <a className="font-bold text-green-600">{title}</a>
+          <a className="font-bold text-green-600 transition-colors border-b-2 hover:border-green-600">
+            {title}
+          </a>
         </Link>
         {/* !Title */}
 
@@ -63,7 +65,7 @@ export default function EventCard({ title, date, contact, thumbnail }) {
 
       {/* Button */}
       <Link href="/">
-        <a className="px-32 py-2 my-4 font-bold text-center bg-green-600 rounded-md text-gray-50">
+        <a className="px-32 py-2 my-4 font-bold text-center transition-colors bg-green-600 rounded-md text-gray-50 hover:bg-green-500 active:bg-green-700 hover:text-gray-100 active:text-gray-200">
           Attend
         </a>
       </Link>
