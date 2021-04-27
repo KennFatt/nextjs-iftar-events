@@ -33,7 +33,7 @@ const dummy = [
   },
   {
     id: 1,
-    title: "Reuni dan Silahturahmi SMPN 9 Jakarta",
+    title: "Reuni dan Silaturahmi SMPN 9 Jakarta",
     date: "2021-04-28",
     contact: "+62 141-501-223",
     description:

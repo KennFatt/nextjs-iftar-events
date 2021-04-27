@@ -17,7 +17,7 @@ export default function EventCard({ title, date, contact, thumbnail }) {
       <div className="w-full px-4 py-4 space-y-2">
         {/* Title */}
         <Link href="/">
-          <a className="font-bold text-green-600 transition-colors border-b-2 hover:border-green-600">
+          <a className="font-bold text-green-600 transition-colors border-b-2 border-transparent hover:border-green-600">
             {title}
           </a>
         </Link>
