@@ -7,6 +7,9 @@ export default function Home() {
 
   return (
     <Container>
+      <h1 className="py-4 text-2xl font-semibold text-gray-900">
+        Featured iftar events
+      </h1>
       <div className="py-4 space-y-4 ">
         {dummy.map(({ id, featured, ...rest }) => {
           if (featured) {
