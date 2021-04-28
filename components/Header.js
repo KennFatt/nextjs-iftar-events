@@ -1,6 +1,7 @@
+import React from "react";
 import Link from "next/link";
 
-export default function Header() {
+function Header() {
   return (
     <header className="sticky top-0 bg-green-700 shadow-lg text-gray-50">
       <nav className="flex items-center justify-between max-w-xs py-4 mx-auto">
@@ -25,3 +26,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default React.memo(Header);
