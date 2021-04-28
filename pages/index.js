@@ -1,5 +1,5 @@
-import EventCard from "../components/EventCard";
-import Header from "../components/Header";
+import EventCard from "@/components/EventCard";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
