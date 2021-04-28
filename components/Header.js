@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="bg-green-700 shadow-lg text-gray-50">
-      <div className="container flex items-center justify-between px-4 py-4 mx-auto">
+    <header className="sticky top-0 bg-green-700 shadow-lg text-gray-50">
+      <nav className="flex items-center justify-between max-w-xs py-4 mx-auto">
         <div>
           <Link href="/">
             <a className="text-2xl font-bold transition-opacity font-title hover:opacity-90">
@@ -21,7 +21,7 @@ export default function Header() {
             </li>
           </ul>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function EventCard({ title, date, contact, thumbnail }) {
   return (
-    <div className="container flex flex-col items-center mx-auto overflow-hidden rounded-md shadow-lg">
+    <div className="flex flex-col items-center overflow-hidden transition-shadow rounded-md shadow-sm hover:shadow-md">
       {/* Image */}
       <div className="w-full h-32 bg-gradient-to-br from-green-800 to-green-400">
         <img

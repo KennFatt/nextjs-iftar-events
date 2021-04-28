@@ -1,20 +1,19 @@
 import EventCard from "@/components/EventCard";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <>
-      {/* Header Component */}
       <Header />
-      {/* !Header Component */}
 
-      {/* List Container */}
-      <main className="min-h-screen px-4 py-4 space-y-4 bg-gray-50">
+      <main className="max-w-xs min-h-screen py-4 mx-auto space-y-4">
         {dummy.map(({ id, ...rest }) => (
           <EventCard key={id} {...rest} />
         ))}
       </main>
-      {/* !List Container */}
+
+      <Footer />
     </>
   );
 }
