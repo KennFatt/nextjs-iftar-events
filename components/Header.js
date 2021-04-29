@@ -4,7 +4,7 @@ import Link from "next/link";
 function Header() {
   return (
     <header className="sticky top-0 bg-green-700 shadow-lg text-gray-50">
-      <nav className="flex items-center justify-between max-w-xs py-4 mx-auto">
+      <nav className="flex items-center justify-between max-w-xs py-4 mx-auto md:max-w-lg lg:max-w-3xl">
         <div>
           <Link href="/">
             <a className="text-2xl font-bold transition-opacity font-title hover:opacity-90">

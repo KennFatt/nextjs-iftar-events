@@ -11,7 +11,7 @@ export default function Container(props) {
   return (
     <>
       <Header />
-      <main className="max-w-xs min-h-screen mx-auto">{children}</main>
+      <main className="max-w-xs min-h-screen mx-auto md:max-w-lg lg:max-w-3xl">{children}</main>
       <Footer />
     </>
   );

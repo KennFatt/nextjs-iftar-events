@@ -55,7 +55,7 @@ export default function EventDetailByIdPage() {
         {/* Image */}
         <div className="overflow-hidden rounded-md bg-gradient-to-br from-green-800 to-green-400">
           <img
-            className="object-cover w-full h-64"
+            className="object-cover w-full h-64 lg:h-96"
             alt={`An Iftar Event: ${title}`}
             src={`/images/${thumbnail}`}
             loading="lazy"
