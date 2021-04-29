@@ -18,6 +18,7 @@ export default function EventCard({ title, date, contact, thumbnail }) {
           src={`/images/${thumbnail}`}
           alt={`An Iftar Event: ${title}`}
           className="object-cover w-full max-h-32"
+          loading="lazy"
         />
       </div>
 

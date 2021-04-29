@@ -19,7 +19,6 @@ export default function EventDetailByIdPage() {
     }
 
     const { eventId } = router.query;
-    console.log(eventId);
     const findEventId = eventId.toLowerCase().split("-").join(" ");
 
     for (const [idx, event] of dummy.entries()) {
@@ -40,6 +39,7 @@ export default function EventDetailByIdPage() {
           <img
             src="/assets/floating-undraw.svg"
             alt="Floating illustration from Undraw"
+            loading="lazy"
           />
           <h1 className="font-bold tracking-tighter text-center text-green-700">
             The event you're looking for is not exists, yet
@@ -58,6 +58,7 @@ export default function EventDetailByIdPage() {
             className="object-cover w-full h-64"
             alt={`An Iftar Event: ${title}`}
             src={`/images/${thumbnail}`}
+            loading="lazy"
           />
         </div>
 
