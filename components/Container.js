@@ -17,7 +17,6 @@ export default function Container(props) {
     <>
       <Head>
         <title>{meta.title}</title>
-        <meta charset="utf-8" />
         <meta name="author" content={meta.author} />
         <meta name="description" content={meta.description} />
       </Head>
