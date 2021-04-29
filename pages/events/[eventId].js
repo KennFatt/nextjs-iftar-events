@@ -35,11 +35,12 @@ export default function EventDetailByIdPage() {
   if (isInvalid) {
     return (
       <Container>
-        <div className="flex flex-col justify-center h-screen space-y-6">
+        <div className="flex flex-col items-center justify-center h-screen space-y-6">
           <img
             src="/assets/floating-undraw.svg"
             alt="Floating illustration from Undraw"
             loading="lazy"
+            className="lg:max-w-lg"
           />
           <h1 className="font-bold tracking-tighter text-center text-green-700">
             The event you're looking for is not exists, yet
@@ -50,7 +51,7 @@ export default function EventDetailByIdPage() {
   }
 
   return (
-    <Container>
+    <Container title={title}>
       <div className="py-4 space-y-4 text-gray-900">
         {/* Image */}
         <div className="overflow-hidden rounded-md bg-gradient-to-br from-green-800 to-green-400">

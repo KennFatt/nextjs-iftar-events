@@ -1,17 +1,31 @@
+import Head from "next/head";
 import Footer from "./Footer";
 import Header from "./Header";
 
 export default function Container(props) {
-  /**
-   * TODO: Catch the necessary meta data from props
-   *  by so, we could even take control for the <Head> component.
-   */
-  const { children } = props;
+  const { children, ...additionalMeta } = props;
+
+  const meta = {
+    title: "Iftar Events",
+    author: "Kennan Fattah",
+    description:
+      "Web application to attend an iftar event with your local communities.",
+    ...additionalMeta,
+  };
 
   return (
     <>
+      <Head>
+        <title>{meta.title}</title>
+        <meta charset="utf-8" />
+        <meta name="author" content={meta.author} />
+        <meta name="description" content={meta.description} />
+      </Head>
+
       <Header />
-      <main className="max-w-xs min-h-screen mx-auto md:max-w-lg lg:max-w-3xl">{children}</main>
+      <main className="max-w-xs min-h-screen mx-auto md:max-w-lg lg:max-w-3xl">
+        {children}
+      </main>
       <Footer />
     </>
   );
