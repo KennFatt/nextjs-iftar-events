@@ -34,10 +34,17 @@ export default function EventDetailByIdPage() {
   }, [router.isReady]);
 
   if (isInvalid) {
-    // TODO: Impl custom not found page for particular event
     return (
       <Container>
-        <h1>The event does not exists!</h1>
+        <div className="flex flex-col justify-center h-screen space-y-6">
+          <img
+            src="/assets/floating-undraw.svg"
+            alt="Floating illustration from Undraw"
+          />
+          <h1 className="font-bold tracking-tighter text-center text-green-700">
+            The event you're looking for is not exists, yet
+          </h1>
+        </div>
       </Container>
     );
   }
