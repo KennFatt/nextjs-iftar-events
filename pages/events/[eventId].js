@@ -1,6 +1,7 @@
 import ContactPlaceholder from "@/components/ContactPlaceholder";
 import Container from "@/components/Container";
 import DatePlaceholder from "@/components/DatePlaceholder";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { useData } from "@/lib/data-source";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -32,6 +33,21 @@ export default function EventDetailByIdPage() {
     setIsInvalid(true);
   }, [router.isReady]);
 
+  if (!router.query.eventId) {
+    return (
+      <Container>
+        <div className="flex flex-col items-center justify-center h-screen space-y-6 select-none">
+          <div
+            className="w-16 h-16 border-8 border-t-8 rounded-full border-green-50 animate-spin-slow"
+            style={{ borderTopColor: "rgba(4, 120, 87, 1)" }}></div>
+          <h1 className="font-bold tracking-tighter text-center text-green-700 animate-pulse">
+            Loading...
+          </h1>
+        </div>
+      </Container>
+    );
+  }
+
   if (isInvalid) {
     return (
       <Container>
@@ -54,8 +70,8 @@ export default function EventDetailByIdPage() {
     <Container title={title}>
       <div className="py-4 space-y-4 text-gray-900">
         {/* Image */}
-        <div className="overflow-hidden rounded-md bg-gradient-to-br from-green-800 to-green-400">
-          <img
+        <div className="overflow-hidden rounded-md">
+          <ImagePlaceholder
             className="object-cover w-full h-64 lg:h-96"
             alt={`An Iftar Event: ${title}`}
             src={`/images/${thumbnail}`}

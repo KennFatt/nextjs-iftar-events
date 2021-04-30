@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ContactPlaceholder from "./ContactPlaceholder";
 import DatePlaceholder from "./DatePlaceholder";
+import ImagePlaceholder from "./ImagePlaceholder";
 
 export default function EventCard({ title, date, contact, thumbnail }) {
   const hrefValue = {
@@ -13,8 +14,8 @@ export default function EventCard({ title, date, contact, thumbnail }) {
   return (
     <div className="flex flex-col items-center overflow-hidden transition-shadow rounded-md shadow-sm lg:flex-row hover:shadow-md">
       {/* Image */}
-      <div className="w-full bg-gradient-to-br from-green-800 to-green-400">
-        <img
+      <div className="w-full">
+        <ImagePlaceholder
           src={`/images/${thumbnail}`}
           alt={`An Iftar Event: ${title}`}
           className="object-cover w-full h-32 lg:h-64 md:h-48"

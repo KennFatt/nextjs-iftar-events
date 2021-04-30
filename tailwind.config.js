@@ -8,6 +8,9 @@ module.exports = {
         title: "Courgette",
         navitem: "'Montserrat Alternates'",
       },
+      animation: {
+        "spin-slow": "spin 1.5s linear infinite",
+      },
     },
   },
   variants: {
