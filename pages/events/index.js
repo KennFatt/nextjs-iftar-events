@@ -31,6 +31,7 @@ export default function EventsPage() {
           <label htmlFor="locations">Filter location: </label>
           <select
             name="locations"
+            id="locations"
             className="flex-grow bg-transparent border-b-2 border-green-200 focus:outline-none"
             onChange={onItemSelected}
             value={selectedLocation}>
