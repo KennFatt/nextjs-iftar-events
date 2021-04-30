@@ -1,34 +1,17 @@
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
-const Image = forwardRef((props, ref) => <img {...props} ref={ref} />);
+export default function ImagePlaceholder(props) {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const placeholderClass = !isImageLoaded && "animate-pulse";
 
-function ImagePlaceholder(props) {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const imgRef = useRef();
-
-  useEffect(() => {
-    const img = imgRef.current;
-    if (img) {
-      img.onload = () => {
-        setIsLoaded(true);
-      };
-    }
-
-    return () => {
-      if (img) {
-        img.onload = null;
-      }
-    };
-  }, []);
+  function onImageLoaded() {
+    setIsImageLoaded(true);
+  }
 
   return (
     <div
-      className={`bg-gradient-to-br from-green-800 to-green-400 ${
-        !isLoaded && "animate-pulse"
-      }`}>
-      <Image {...props} ref={imgRef} />
+      className={`bg-gradient-to-br from-green-800 to-green-400 ${placeholderClass}`}>
+      <img {...props} onLoad={onImageLoaded} />
     </div>
   );
 }
-
-export default ImagePlaceholder;

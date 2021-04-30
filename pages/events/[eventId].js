@@ -6,11 +6,11 @@ import { useData } from "@/lib/data-source";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-export default function EventDetailByIdPage() {
+export default function EventDetailPage() {
   const dummy = useData();
   const router = useRouter();
   const [content, setContent] = useState({});
-  const [isInvalid, setIsInvalid] = useState(false);
+  const [isNotFound, setIsNotFound] = useState(false);
   const { title, date, contact, description, thumbnail } = content;
 
   useEffect(() => {
@@ -30,10 +30,10 @@ export default function EventDetailByIdPage() {
       }
     }
 
-    setIsInvalid(true);
+    setIsNotFound(true);
   }, [router.isReady]);
 
-  if (!router.query.eventId) {
+  if (!router.query.eventId || !thumbnail) {
     return (
       <Container>
         <div className="flex flex-col items-center justify-center h-screen space-y-6 select-none">
@@ -48,7 +48,7 @@ export default function EventDetailByIdPage() {
     );
   }
 
-  if (isInvalid) {
+  if (isNotFound) {
     return (
       <Container>
         <div className="flex flex-col items-center justify-center h-screen space-y-6">
