@@ -20,12 +20,11 @@ export default function EventDetailPage() {
     }
 
     const { eventId } = router.query;
-    const findEventId = eventId.toLowerCase().split("-").join(" ");
+    const findEventId = eventId.replaceAll("-", " ").toLowerCase();
 
-    for (const [idx, event] of dummy.entries()) {
-      if (event.title.toLowerCase() === findEventId) {
-        setContent(dummy[idx]);
-
+    for (let i = 0; i < dummy.length; ++i) {
+      if (dummy[i].title.toLowerCase() === findEventId) {
+        setContent(dummy[i]);
         return;
       }
     }
