@@ -11,11 +11,10 @@ export default function Home() {
         Featured iftar events
       </h1>
       <div className="py-4 space-y-4">
-        {dummy.map(({ id, featured, ...rest }) => {
-          if (featured) {
-            return <EventCard key={id} {...rest} />;
-          }
-        })}
+        {dummy.map(
+          ({ id, featured, ...rest }) =>
+            featured && <EventCard key={id} {...rest} />
+        )}
       </div>
     </Container>
   );

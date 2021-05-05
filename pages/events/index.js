@@ -1,24 +1,12 @@
 import Container from "@/components/Container";
 import EventCard from "@/components/EventCard";
-import { useData } from "@/lib/data-source";
-import { useEffect, useState } from "react";
+import { getUniqueLocations, useData } from "@/lib/data-source";
+import { useState } from "react";
 
 export default function EventsPage() {
   const dummy = useData();
+  const locations = getUniqueLocations(dummy);
   const [selectedLocation, setSelectedLocation] = useState("*");
-  const [locations, setLocations] = useState([]);
-
-  useEffect(() => {
-    /** Filtering location and remove duplication */
-    let tmpLocations = [];
-    dummy.forEach(({ city }) => {
-      if (!tmpLocations.includes(city)) {
-        tmpLocations.push(city);
-      }
-    });
-
-    setLocations(tmpLocations);
-  }, []);
 
   function onItemSelected(e) {
     setSelectedLocation(e.target.value);
